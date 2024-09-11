@@ -51,7 +51,19 @@ Constraints:
 import java.util.Scanner;
 
 public class L1_RemoveElement {
+    public static int  removeElement(int []nums, int val){
+        int k=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val){
+                nums[k]=nums[i];
+                k++;
+            }
+        }
+        return k;
+    };
+
     public static void main(String[] args) {
+        
 
         Scanner sc=new Scanner(System.in);
 
@@ -69,22 +81,15 @@ public class L1_RemoveElement {
         System.out.println("Enter a value to remove its all occurance from the array:-");
 
         int val=sc.nextInt();
-        int k=n;
-        int result[]=new int[k];
-        for(int i=0;i<n;i++){
-            if(val==nums[i]){
-                k--;
-            }
-            else{
-                result[i]=nums[i];
-            }
-        }
+        int k=removeElement(nums, val);
+
         System.out.println("The number of remaining element is "+k);
 
         System.out.println("The remaining elements are:-");
-
+        System.out.print("[");
         for(int i=0;i<k;i++){
-            System.out.println(result[i]);
+            System.out.print(+nums[i]+",");
         }
+        System.out.print("]");
     }
 }
