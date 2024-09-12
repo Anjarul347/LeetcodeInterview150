@@ -45,24 +45,45 @@ import java.util.Scanner;
 
 public class L3_RemoveDuplicate_II {
 
-    public static int removeDuplicate_II(int []nums){
-        int k=1;
-        int c=1;
-        for(int i=1;i<nums.length;i++){
-            if(nums[i]!=nums[i-1]){
-                nums[k]=nums[i];
-                k++;
-                c=1;
+    //1st Approach
 
-            }
-            if(nums[i]==nums[i-1] && c<2){
-                nums[k]=nums[i];
-                k++;
-                c=2;
-            }
+    // public static int removeDuplicate_II(int []nums){
+    //     int k=1;
+    //     int c=1;
+    //     for(int i=1;i<nums.length;i++){
+    //         if(nums[i]!=nums[i-1]){
+    //             nums[k]=nums[i];
+    //             k++;
+    //             c=1;
+
+    //         }
+    //         if(nums[i]==nums[i-1] && c<2){
+    //             nums[k]=nums[i];
+    //             k++;
+    //             c=2;
+    //         }
           
+    //     }
+    //     return k;
+    // }
+
+
+    // 2nd approach
+
+    public static int removeDuplicate_II(int[] nums) {
+        int n = nums.length;
+        if(n<=2){
+            return n;
         }
-        return k;
+
+        int j = 2;
+        for(int i=2; i<n; i++){
+            if(nums[i] != nums[j-2]){
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
