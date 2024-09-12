@@ -77,7 +77,7 @@ public class L1_RemoveElement {
         for(int i=0;i<n;i++){
             nums[i]=sc.nextInt();
         }
-        
+        sc.close();
         System.out.println("Enter a value to remove its all occurance from the array:-");
 
         int val=sc.nextInt();

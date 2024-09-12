@@ -67,6 +67,7 @@ public class L2_RemoveDuplicate {
         for(int i=0;i<n;i++){
             nums[i]=sc.nextInt();
         }
+        sc.close();
 
         int k =removeDuplicate(nums);
 
