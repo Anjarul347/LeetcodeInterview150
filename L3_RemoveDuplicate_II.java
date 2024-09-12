@@ -44,6 +44,26 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 import java.util.Scanner;
 
 public class L3_RemoveDuplicate_II {
+
+    public static int removeDuplicate_II(int []nums){
+        int k=1;
+        int c=1;
+        for(int i=1;i<nums.length;i++){
+            if(nums[i]!=nums[i-1]){
+                nums[k]=nums[i];
+                k++;
+                c=1;
+
+            }
+            if(nums[i]==nums[i-1] && c<2){
+                nums[k]=nums[i];
+                k++;
+                c=2;
+            }
+          
+        }
+        return k;
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of aray element:-");
@@ -57,5 +77,13 @@ public class L3_RemoveDuplicate_II {
             nums[i]=sc.nextInt();
         }
         sc.close();
+
+        int k=removeDuplicate_II(nums);
+
+        System.out.printf("The total %d unique elements are:- ",k);
+
+      for(int i=0;i<k;i++){
+        System.out.printf("%d ",nums[i]);
+      }
     }
 }
