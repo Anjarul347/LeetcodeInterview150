@@ -51,15 +51,15 @@ public class L3_RemoveDuplicate_II {
         int k=1;
         int c=1;
         for(int i=1;i<nums.length;i++){
-            if(nums[i]!=nums[i-1]){
+            if(nums[i]>nums[i-1]){
                 nums[k]=nums[i];
-                k++;
+                k+=1;
                 c=1;
-
             }
-            if(nums[i]==nums[i-1] && c<2){
+
+           else if(c==1){
                 nums[k]=nums[i];
-                k++;
+                k+=1;
                 c=2;
             }
           
@@ -92,7 +92,7 @@ public class L3_RemoveDuplicate_II {
         int n=sc.nextInt();
         int nums[]=new int[n];
 
-        System.out.print("Enter "+n+" array element:-");
+        System.out.print("Enter "+n+" array element:-\n");
 
         for(int i=0;i<n;i++){
             nums[i]=sc.nextInt();
@@ -101,7 +101,7 @@ public class L3_RemoveDuplicate_II {
 
         int k=removeDuplicate_II(nums);
 
-        System.out.printf("The total %d unique elements are:- ",k);
+        System.out.printf("The total %d unique elements are:- \n",k);
 
       for(int i=0;i<k;i++){
         System.out.printf("%d ",nums[i]);
