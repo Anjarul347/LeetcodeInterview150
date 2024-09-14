@@ -23,9 +23,27 @@ n == nums.length
  */
 import java.util.*;
 public class L6_MajorityElement {
+    public static int majorityElement(int []nums){
+
+        Arrays.sort(nums);
+        int n = nums.length;
+        return nums[n/2];
+    }
     public static void main(String[] args) {
+       
         Scanner sc=new  Scanner(System.in);
 
-        
+        System.out.println("Enter the number of array:-");
+        int n=sc.nextInt();
+        int []nums=new int[n];
+        System.out.printf("Enter %d array element:-",n);
+
+        for(int i=0;i<n;i++){
+            nums[i]=sc.nextInt();
+        }
+
+        int k=majorityElement(nums);
+
+        System.out.printf("\n The majority element is %d",k);
     }
 }
