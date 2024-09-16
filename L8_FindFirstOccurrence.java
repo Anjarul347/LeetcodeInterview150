@@ -28,24 +28,20 @@ import java.util.Scanner;
 public class L8_FindFirstOccurrence {
 
     public static int findFirstOccurrence(String haystack, String needle){
-        int j,m;
-        int l1=haystack.length();
-        int l2=needle.length();
-        String str;
-        for(int k=0;k<=l1-l2;k++){
-            str=haystack.substring(k,l1);
-            m=str.length();
+        int j;
+        int haysLength=haystack.length();
+        int needleLength=needle.length();
+        for(int k=0;k<=haysLength-needleLength;k++){
             j=0;
-            for(int i=k;i<m;i++){
+            for(int i=k;i<haysLength;i++){
                 if(haystack.charAt(i)==needle.charAt(j)){
                     j+=1;
-                    if(j==l2){
+                    if(j==needleLength){
                         return i-(j-1);
                     }
-                    
                 }
                 else{
-                    j=0;
+                    break;
                 }
                 
             }
